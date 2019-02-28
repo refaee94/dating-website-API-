@@ -17,9 +17,10 @@ obj
 *.launch
 .settings/
 *.sublime-workspace
+*.db
 
 # IDE - VSCode
-.vscode/*
+.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json

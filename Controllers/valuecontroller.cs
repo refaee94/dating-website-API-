@@ -3,8 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Authorization;
+
 namespace dating_app.models
-{
+{[Authorize]
     // set route attribute to make request as 'api/Product'
     [Route("api/[controller]")]
     public class valuec : Controller
