@@ -21,11 +21,14 @@ namespace dating_app.Controllers {
 
         [HttpPost ("register")]
         public IActionResult Register ([FromBody] userregto u) {
+          if(!string.IsNullOrEmpty( u.uname))
+                    u.pass=u.pass.ToLower();
+ if (_repo.exist (u.uname))
+                return BadRequest ("already taken");
             if (!ModelState.IsValid)
                 return BadRequest (ModelState);
             u.uname = u.uname.ToLower ();
-            if (_repo.exist (u.uname))
-                return BadRequest ("already taken");
+           
             var utocreate = new user {
 
                 Name = u.uname
